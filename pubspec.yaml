@@ -40,6 +40,9 @@ dependencies:
   get_it: ^7.3.0
   flutter_native_splash: ^2.2.19
   flutter_svg: ^2.0.5
+  equatable: ^2.0.5
+  cached_network_image: ^3.2.3
+  connectivity_plus: ^3.0.5
 
 dev_dependencies:
   flutter_test:

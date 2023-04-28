@@ -11,7 +11,11 @@ abstract class SilverAppTheme {
   static final ThemeData light = ThemeData(
     primaryColor: SilverAppColors.yellow,
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: const AppBarTheme(),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      centerTitle: true,
+    ),
     bottomAppBarTheme: const BottomAppBarTheme(
       color: Color(0xFFFEFEFE),
     ),

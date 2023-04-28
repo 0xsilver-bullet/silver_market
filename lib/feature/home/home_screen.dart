@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:silver_market/feature/home/utils/non_glowing_scroll_behavior.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'blocs/home_mode/home_mode_bloc.dart';
 import 'page/pages.dart';
 import 'widget/widgets.dart';
+import 'utils/non_glowing_scroll_behavior.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,22 +31,26 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: DefaultBottomNavBar(
-        selectedIndex: _currentPageIndex,
-        onDestSelected: _navigateToDest,
-      ),
-      body: ScrollConfiguration(
-        behavior: NonGlowingScrollBehavior(),
-        child: PageView(
-          controller: _pageController,
-          onPageChanged: _onPageChanged,
-          children: const [
-            HomePage(),
-            BagPage(),
-            SavedPage(),
-            ProfilePage(),
-          ],
+    return BlocProvider(
+      create: (context) => HomeModeBloc(),
+      child: Scaffold(
+        appBar: AppBar(),
+        bottomNavigationBar: DefaultBottomNavBar(
+          selectedIndex: _currentPageIndex,
+          onDestSelected: _navigateToDest,
+        ),
+        body: ScrollConfiguration(
+          behavior: NonGlowingScrollBehavior(),
+          child: PageView(
+            controller: _pageController,
+            onPageChanged: _onPageChanged,
+            children: const [
+              HomePage(),
+              BagPage(),
+              SavedPage(),
+              ProfilePage(),
+            ],
+          ),
         ),
       ),
     );

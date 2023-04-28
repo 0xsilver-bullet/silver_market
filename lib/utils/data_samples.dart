@@ -1,4 +1,3 @@
-import 'package:silver_market/core/model/home_part.dart';
 import 'package:silver_market/core/model/models.dart';
 
 abstract class DataSamples {
@@ -59,5 +58,55 @@ abstract class DataSamples {
       imageUrl:
           'https://d2zpvmybpipqvy.cloudfront.net/media/filer_public/a7/a0/a7a07756-89e4-4a0b-961d-fd43d894e2f6/joy-uno.jpg',
     )
+  ];
+  static const List<Category> categories = [
+    Category(
+      id: 0,
+      name: 'Furniture',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 1,
+      name: 'Lighting',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 2,
+      name: 'Rugs',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 3,
+      name: 'Mirrors',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 4,
+      name: 'Blankets',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 5,
+      name: 'Cushions',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 6,
+      name: 'Curtains',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
+    Category(
+      id: 7,
+      name: 'Whatever',
+      imageUrl:
+          'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+    ),
   ];
 }

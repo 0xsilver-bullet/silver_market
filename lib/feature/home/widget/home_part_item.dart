@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:silver_market/core/model/home_part.dart';
+import 'package:silver_market/core/model/models.dart';
+import '../blocs/home_mode/home_mode_bloc.dart';
 import 'package:silver_market/theme.dart';
 
 class HomePartItem extends StatelessWidget {
@@ -22,30 +24,34 @@ class HomePartItem extends StatelessWidget {
         color: SilverAppColors.giratina100,
       ),
       margin: const EdgeInsets.only(bottom: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Text(
-              homePart.name,
-              style: Theme.of(context).textTheme.displaySmall,
+      child: InkWell(
+        onTap: () => BlocProvider.of<HomeModeBloc>(context)
+            .add(SelectHomePartEvent(homePart)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                homePart.name,
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
             ),
-          ),
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              bottomRight: Radius.circular(8),
-              topRight: Radius.circular(8),
-            ),
-            child: CachedNetworkImage(
-              width: 82.0,
-              height: double.infinity,
-              imageUrl: homePart.imageUrl,
-              fit: BoxFit.cover,
-            ),
-          )
-        ],
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+              child: CachedNetworkImage(
+                width: 82.0,
+                height: double.infinity,
+                imageUrl: homePart.imageUrl,
+                fit: BoxFit.cover,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

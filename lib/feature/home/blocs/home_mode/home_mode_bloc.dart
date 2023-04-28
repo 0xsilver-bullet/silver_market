@@ -42,6 +42,7 @@ class HomeModeBloc extends Bloc<HomeModeEvent, HomeModeState> {
       SelectedCategory(
         homePart: (state as SelectingCategory).homePart,
         category: event.category,
+        products: DataSamples.products,
       ),
     );
   }

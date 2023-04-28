@@ -109,4 +109,161 @@ abstract class DataSamples {
           'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
     ),
   ];
+
+  static const List<Product> products = [
+    Product(
+      id: 0,
+      imagesUrls: [
+        'https://furniture-ideal.com/wp-content/uploads/2021/03/banner-bedroom-2.png',
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png',
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
+      ],
+      description: 'Its enough',
+      price: 33.0,
+      isNew: true,
+      isFavorite: true,
+    ),
+    Product(
+      id: 1,
+      imagesUrls: [
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
+      ],
+      description:
+          'This is just a long description to see if it will fit and appear on the screen as it should or there will be some problems that we need to work on and fix',
+      price: 40.0,
+      discount: 99,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 1,
+      imagesUrls: [
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 2,
+      imagesUrls: [
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 3,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 4,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 5,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 6,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 7,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 8,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 9,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 10,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 11,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 12,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+    Product(
+      id: 13,
+      imagesUrls: [
+        'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
+      ],
+      description: 'description',
+      price: 40.0,
+      isNew: false,
+      isFavorite: false,
+    ),
+  ];
 }

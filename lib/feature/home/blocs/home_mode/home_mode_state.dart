@@ -41,14 +41,17 @@ class SelectedCategory extends HomeModeState {
   const SelectedCategory({
     required this.homePart,
     required this.category,
+    required this.products,
   });
 
   final HomePart homePart;
   final Category category;
+  final List<Product> products;
 
   @override
   List<Object> get props => [
         homePart,
         category,
+        products,
       ];
 }

@@ -7,3 +7,4 @@ export 'stories_home_parts.dart';
 export 'categories_list.dart';
 export 'category_products.dart';
 export 'product_item.dart';
+export 'screen_message.dart';

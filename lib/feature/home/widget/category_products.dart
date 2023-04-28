@@ -34,6 +34,7 @@ class CategoryProducts extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           BlocBuilder<HomeModeBloc, HomeModeState>(
+            buildWhen: (previous, current) => current is SelectedCategory,
             builder: (context, state) {
               final products = (state as SelectedCategory).products;
               return Expanded(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'blocs/home_mode/home_mode_bloc.dart';
+import 'blocs/blocs.dart';
 import 'page/pages.dart';
 import 'widget/widgets.dart';
 import 'utils/non_glowing_scroll_behavior.dart';
@@ -31,8 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeModeBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => HomeModeBloc()),
+        BlocProvider(create: (_) => BagBloc()),
+        BlocProvider(create: (_) => SavedBloc()),
+      ],
       child: Scaffold(
         appBar: AppBar(),
         bottomNavigationBar: DefaultBottomNavBar(
@@ -44,11 +48,15 @@ class _HomeScreenState extends State<HomeScreen> {
           child: PageView(
             controller: _pageController,
             onPageChanged: _onPageChanged,
-            children: const [
-              HomePage(),
-              BagPage(),
-              SavedPage(),
-              ProfilePage(),
+            children: [
+              const HomePage(),
+              BagPage(
+                onEmptyBagCallback: () => _navigateToDest(0),
+              ),
+              SavedPage(
+                action: () => _navigateToDest(0),
+              ),
+              const ProfilePage(),
             ],
           ),
         ),

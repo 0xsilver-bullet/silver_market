@@ -119,6 +119,10 @@ abstract class DataSamples {
         'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
       ],
       description: 'Its enough',
+      productColors: [
+        ProductColor(name: 'Black', value: 0xFF000000),
+        ProductColor(name: 'Brown', value: 0xFF964B00)
+      ],
       price: 33.0,
       isNew: true,
       isFavorite: true,
@@ -130,6 +134,7 @@ abstract class DataSamples {
       ],
       description:
           'This is just a long description to see if it will fit and appear on the screen as it should or there will be some problems that we need to work on and fix',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       discount: 99,
       isNew: false,
@@ -141,6 +146,7 @@ abstract class DataSamples {
         'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -151,6 +157,7 @@ abstract class DataSamples {
         'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-mufasa-1350789.jpg&fm=jpg'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -161,6 +168,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -171,6 +179,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -181,6 +190,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -191,6 +201,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -201,6 +212,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -211,6 +223,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -221,6 +234,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -231,6 +245,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -241,6 +256,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -251,6 +267,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,
@@ -261,6 +278,7 @@ abstract class DataSamples {
         'https://zeitraumcdn-1db3c.kxcdn.com/wp-content/uploads/2022/12/zeitraummoebel-header-novelties-milandesignweek-3-1240x676.png'
       ],
       description: 'description',
+      productColors: [ProductColor(name: 'Black', value: 0xFF000000)],
       price: 40.0,
       isNew: false,
       isFavorite: false,

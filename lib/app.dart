@@ -10,8 +10,15 @@ class SilverMarketApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => UserBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => UserBloc(),
+        ),
+        BlocProvider(
+          create: (_) => BagBloc(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Silver Market',
         theme: SilverAppTheme.light,

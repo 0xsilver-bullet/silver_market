@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class SilverAppColors {
   static const yellow = Color(0xFFFEEB70);
   static const giratina100 = Color(0xFFF5F5F5);
+  static const giratina300 = Color(0xFFE0E0E0);
   static const giratina400 = Color(0xFFBDBDBD);
   static const giratina500 = Color(0xFF9E9E9E);
 }
@@ -15,6 +16,9 @@ abstract class SilverAppTheme {
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(
       color: Color(0xFFFEFEFE),

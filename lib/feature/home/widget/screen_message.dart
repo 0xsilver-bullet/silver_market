@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:silver_market/core/widget/widgets.dart';
 
 import 'package:silver_market/theme.dart';
 
@@ -40,21 +41,7 @@ class ScreenMessage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const Expanded(child: SizedBox()),
-          Container(
-            height: 64,
-            width: double.infinity,
-            margin: const EdgeInsets.only(bottom: 16.0),
-            child: ElevatedButton(
-              onPressed: action,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: SilverAppColors.yellow,
-              ),
-              child: Text(
-                actionText,
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-            ),
-          )
+          AppButton(actionText: actionText, action: action),
         ],
       ),
     );

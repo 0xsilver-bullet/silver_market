@@ -34,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => HomeModeBloc()),
-        BlocProvider(create: (_) => BagBloc()),
         BlocProvider(create: (_) => SavedBloc()),
       ],
       child: Scaffold(

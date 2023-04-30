@@ -8,3 +8,4 @@ export 'categories_list.dart';
 export 'category_products.dart';
 export 'product_item.dart';
 export 'screen_message.dart';
+export 'product_card.dart';

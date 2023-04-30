@@ -7,9 +7,11 @@ class ProductItem extends StatelessWidget {
   const ProductItem({
     Key? key,
     required this.product,
+    this.onClick,
   }) : super(key: key);
 
   final Product product;
+  final Function(Product)? onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +26,12 @@ class ProductItem extends StatelessWidget {
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  product.imagesUrls[0],
-                  fit: BoxFit.cover,
+                child: InkWell(
+                  onTap: () => onClick?.call(product),
+                  child: Image.network(
+                    product.imagesUrls[0],
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

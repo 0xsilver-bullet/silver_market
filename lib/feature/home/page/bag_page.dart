@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:silver_market/core/blocs/blocs.dart';
 import '../widget/widgets.dart';
-import '../blocs/blocs.dart';
 
 class BagPage extends StatelessWidget {
   const BagPage({
@@ -37,7 +37,32 @@ class BagPage extends StatelessWidget {
                   ),
                 );
               } else {
-                return Container();
+                final bag = (state as HasOrder).bag;
+                return Expanded(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.55,
+                        child: ListView.builder(
+                          padding: const EdgeInsets.only(top: 8),
+                          itemCount: bag.bagItems.length,
+                          itemBuilder: (_, index) => Container(
+                            margin: const EdgeInsets.only(bottom: 18.0),
+                            child: ProductCard(
+                              product: bag.bagItems[index].product,
+                              onClear: () =>
+                                  BlocProvider.of<BagBloc>(context).add(
+                                RemoveFromBagEvent(
+                                    product: bag.bagItems[index].product),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Build the rest of the screen items like promo code...
+                    ],
+                  ),
+                );
               }
             },
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:silver_market/feature/home/widget/widgets.dart';
+import 'package:silver_market/feature/product_details/product_details_screen.dart';
 import 'package:silver_market/theme.dart';
 
 import '../blocs/home_mode/home_mode_bloc.dart';
@@ -49,6 +50,8 @@ class CategoryProducts extends StatelessWidget {
                   itemBuilder: (_, index) {
                     return ProductItem(
                       product: products[index],
+                      onClick: (product) => Navigator.of(context)
+                          .push(ProductDetailsScreen.route(product)),
                     );
                   },
                 ),

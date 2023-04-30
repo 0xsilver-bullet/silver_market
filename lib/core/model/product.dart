@@ -1,10 +1,13 @@
 import 'package:equatable/equatable.dart';
 
+import 'models.dart';
+
 class Product extends Equatable {
   const Product({
     required this.id,
     required this.imagesUrls,
     required this.description,
+    required this.productColors,
     required this.price,
     this.discount,
     required this.isNew,
@@ -14,6 +17,7 @@ class Product extends Equatable {
   final int id;
   final List<String> imagesUrls;
   final String description;
+  final List<ProductColor> productColors;
   final double price;
   final int? discount; // 0 : 100
   final bool isNew;
@@ -24,6 +28,7 @@ class Product extends Equatable {
         id,
         imagesUrls,
         description,
+        productColors,
         price,
         discount,
         isNew,

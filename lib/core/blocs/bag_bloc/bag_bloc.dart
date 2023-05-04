@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartx/dartx.dart';
 import 'package:equatable/equatable.dart';
 
 import 'package:silver_market/core/model/models.dart';
+import 'package:silver_market/core/model/promo_code.dart';
 part 'bag_event.dart';
 part 'bag_state.dart';
 
@@ -21,10 +24,20 @@ class BagBloc extends Bloc<BagEvent, BagState> {
     if (state is EmptyBag) {
       // Then we need to create a new bag and add the product to it
       final bag = Bag(
-        bagItems: [BagItem(product: event.product)],
+        bagItems: [
+          BagItem(
+            product: event.product,
+            productColor: event.productColor,
+          ),
+        ],
         total: event.product.price, // initially total will be product cost
       );
-      emit(HasOrder(bag));
+      emit(
+        HasOrder(
+          bag: bag,
+          finalTotal: _calculateOrderTotal(bag.total, null),
+        ),
+      );
       return;
     }
     final currentBagItems = (state as HasOrder).bag.bagItems;
@@ -39,12 +52,23 @@ class BagBloc extends Bloc<BagEvent, BagState> {
     }
     // Then product need to be added to the bag
     final List<BagItem> newBagItemsList = List.from(currentBagItems)
-      ..add(BagItem(product: event.product));
+      ..add(
+        BagItem(
+          product: event.product,
+          productColor: event.productColor,
+        ),
+      );
     final newBag = Bag(
       bagItems: newBagItemsList,
       total: _calculateBagItemsTotal(newBagItemsList),
     );
-    emit(HasOrder(newBag));
+    emit(
+      HasOrder(
+        bag: newBag,
+        finalTotal:
+            _calculateOrderTotal(newBag.total, (state as HasOrder).promoCode),
+      ),
+    );
   }
 
   Future<void> _onIncProductCountEvent(
@@ -71,7 +95,13 @@ class BagBloc extends Bloc<BagEvent, BagState> {
       bagItems: newBagItemsList,
       total: _calculateBagItemsTotal(newBagItemsList),
     );
-    emit(HasOrder(newBag));
+    emit(
+      HasOrder(
+        bag: newBag,
+        finalTotal:
+            _calculateOrderTotal(newBag.total, (state as HasOrder).promoCode),
+      ),
+    );
   }
 
   Future<void> _onDecProductCountEvent(
@@ -101,7 +131,13 @@ class BagBloc extends Bloc<BagEvent, BagState> {
       bagItems: newBagItemsList,
       total: _calculateBagItemsTotal(newBagItemsList),
     );
-    emit(HasOrder(newBag));
+    emit(
+      HasOrder(
+        bag: newBag,
+        finalTotal:
+            _calculateOrderTotal(newBag.total, (state as HasOrder).promoCode),
+      ),
+    );
   }
 
   Future<void> _onRemoveFromBagEvent(
@@ -128,7 +164,13 @@ class BagBloc extends Bloc<BagEvent, BagState> {
       bagItems: newBagItemsList,
       total: _calculateBagItemsTotal(newBagItemsList),
     );
-    emit(HasOrder(newBag));
+    emit(
+      HasOrder(
+        bag: newBag,
+        finalTotal:
+            _calculateOrderTotal(newBag.total, (state as HasOrder).promoCode),
+      ),
+    );
   }
 
   double _calculateBagItemsTotal(List<BagItem> items) {
@@ -137,5 +179,27 @@ class BagBloc extends Bloc<BagEvent, BagState> {
       total += bagItem.product.price * bagItem.count;
     }
     return total;
+  }
+
+  double _calculateOrderTotal(
+    double bagTotal,
+    PromoCode? promoCode,
+  ) {
+    if (promoCode == null) {
+      return bagTotal;
+    }
+    double? descAmount;
+    if (promoCode.descAmount != null) {
+      descAmount = descAmount;
+    } else if (promoCode.percent != null && promoCode.maxDescAmount != null) {
+      descAmount = min(bagTotal * promoCode.percent!, promoCode.maxDescAmount!);
+    } else if (promoCode.percent != null) {
+      descAmount = bagTotal * promoCode.percent!;
+    }
+    if (descAmount == null) {
+      return bagTotal;
+    } else {
+      return bagTotal - descAmount;
+    }
   }
 }

@@ -63,7 +63,10 @@ class ProductCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              if (actionWidget != null) actionWidget!
+              if (actionWidget != null) ...[
+                const SizedBox(height: 8.0),
+                actionWidget!
+              ]
             ],
           ),
         ),

@@ -10,11 +10,13 @@ abstract class BagEvent extends Equatable {
 class AddProductToBagEvent extends BagEvent {
   const AddProductToBagEvent({
     required this.product,
+    required this.productColor,
   });
   final Product product;
+  final ProductColor productColor;
 
   @override
-  List<Object> get props => [product];
+  List<Object> get props => [product, productColor];
 }
 
 class IncProductCountEvent extends BagEvent {
@@ -35,6 +37,16 @@ class DecProductCountEvent extends BagEvent {
 
   @override
   List<Object> get props => [product];
+}
+
+class SetProductColor extends BagEvent {
+  const SetProductColor({required this.productId, required this.productColor});
+
+  final int productId;
+  final ProductColor productColor;
+
+  @override
+  List<Object> get props => [productId, productColor];
 }
 
 class RemoveFromBagEvent extends BagEvent {

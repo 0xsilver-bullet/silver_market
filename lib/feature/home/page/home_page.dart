@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:silver_market/theme.dart';
 import '../blocs/home_mode/home_mode_bloc.dart';
 import '../widget/widgets.dart';
 
@@ -33,7 +34,13 @@ class HomePage extends StatelessWidget {
               right: 16,
               bottom: 8,
             ),
-            child: SearchField(),
+            child: DefaultInputField(
+              hint: 'Search',
+              prefixIcon: const Icon(
+                Icons.search,
+                color: SilverAppColors.giratina500,
+              ),
+            ),
           ),
           BlocBuilder<HomeModeBloc, HomeModeState>(
             builder: (ctx, state) {

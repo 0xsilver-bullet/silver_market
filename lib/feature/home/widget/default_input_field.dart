@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'package:silver_market/theme.dart';
 
-class SearchField extends StatelessWidget {
-  const SearchField({
+class DefaultInputField extends StatelessWidget {
+  const DefaultInputField({
     Key? key,
+    required this.hint,
+    this.prefixIcon,
     this.controller,
     this.onValueChange,
   }) : super(key: key);
 
+  final String hint;
+  final Widget? prefixIcon;
   final TextEditingController? controller;
   final ValueChanged<String>? onValueChange;
 
@@ -17,11 +22,8 @@ class SearchField extends StatelessWidget {
       controller: controller,
       onChanged: onValueChange,
       decoration: InputDecoration(
-        prefixIcon: const Icon(
-          Icons.search,
-          color: SilverAppColors.giratina500,
-        ),
-        hintText: 'Search',
+        prefixIcon: prefixIcon,
+        hintText: hint,
         hintStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
               color: SilverAppColors.giratina500,
               fontWeight: FontWeight.normal,

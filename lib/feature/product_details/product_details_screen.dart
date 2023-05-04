@@ -68,17 +68,27 @@ class ProductDetailsScreen extends StatelessWidget {
                                 productColors: product.productColors,
                                 onColorSelected: (color) =>
                                     BlocProvider.of<ProductColorBloc>(ctx).add(
-                                        SetSelectedColorEvent(color: color)),
+                                  SetSelectedColorEvent(color: color),
+                                ),
                               );
                             },
                           ),
                         ),
                         const SizedBox(height: 24.0),
-                        AppButton(
-                          actionText: 'Add to bag',
-                          icon: SvgPicture.asset('assets/images/bag.svg'),
-                          action: () => BlocProvider.of<BagBloc>(context)
-                              .add(AddProductToBagEvent(product: product)),
+                        Builder(
+                          builder: (ctx) => AppButton(
+                            actionText: 'Add to bag',
+                            icon: SvgPicture.asset('assets/images/bag.svg'),
+                            action: () => BlocProvider.of<BagBloc>(context).add(
+                              AddProductToBagEvent(
+                                product: product,
+                                productColor:
+                                    BlocProvider.of<ProductColorBloc>(ctx)
+                                        .state
+                                        .selectedColor,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),

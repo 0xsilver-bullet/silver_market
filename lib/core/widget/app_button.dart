@@ -7,7 +7,7 @@ class AppButton extends StatelessWidget {
     Key? key,
     required this.actionText,
     this.icon,
-    required this.action,
+    this.action,
   }) : super(key: key);
 
   final String actionText;

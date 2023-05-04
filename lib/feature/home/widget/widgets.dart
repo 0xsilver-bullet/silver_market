@@ -1,5 +1,5 @@
 export 'default_bottom_nav_bar.dart';
-export 'search_field.dart';
+export 'default_input_field.dart';
 export 'story_item.dart';
 export 'home_part_item.dart';
 export 'category_item.dart';
@@ -9,3 +9,5 @@ export 'category_products.dart';
 export 'product_item.dart';
 export 'screen_message.dart';
 export 'product_card.dart';
+export 'bag_item_counter.dart';
+export 'bag_info.dart';
